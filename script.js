@@ -1,7 +1,7 @@
-let screen = document.querySelector(".screen");
+let tela = document.querySelector(".screen");
 let buttons = document.querySelectorAll(".btn");
-let clear = document.querySelector(".btn-clear");
-let equal = document.querySelector("#equals");
+let igual = document.querySelector("#equals");
+let limpar = document.querySelector(".btn-clear");
 
 buttons.forEach(function (button) {
   button.addEventListener("click", function (e) {
@@ -9,17 +9,17 @@ buttons.forEach(function (button) {
       return;
     }
     let view = e.target.dataset.num;
-    screen.value += view;
+    tela.value += view;
   });
 });
 
-equal.addEventListener("click", function (e) {
-  if (screen.value == "") {
+igual.addEventListener("click", function (e) {
+  if (screen.value === "") {
     screen.value = "";
   }
-  screen.value = screen.value + "=" + eval(screen.value);
+  tela.value = eval(tela.value);
 });
 
-clear.addEventListener("click", function (e) {
-  screen.value = "";
+limpar.addEventListener("click", function (e) {
+  tela.value = "";
 });
